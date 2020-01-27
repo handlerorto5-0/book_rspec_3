@@ -6,3 +6,4 @@ end
 
 gem 'byebug'
 gem 'webrick'
+gem 'coderay'
