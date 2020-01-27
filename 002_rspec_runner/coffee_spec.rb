@@ -13,6 +13,7 @@ class Coffee
 end
 
 RSpec.configure do |config|
+  config.filter_run_when_matching(focus: true)
   config.example_status_persistence_file_path = '002_rspec_runner/examples.txt'
 end
 
@@ -23,7 +24,7 @@ RSpec.describe 'A cup of coffee' do
     expect(coffee.price).to eq(1.00)
   end
 
-  context 'with milk' do
+  fcontext 'with milk' do
     before {coffee.add :milk}
 
     it 'costs $1.25' do
