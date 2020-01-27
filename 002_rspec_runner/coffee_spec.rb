@@ -8,12 +8,12 @@ class Coffee
   end
 
   def price
-    1.00#  + ingredients.size*0.25
+    1.00  + ingredients.size*0.25
   end
 end
 
 RSpec.configure do |config|
-  config.filter_run_when_matching(focus: true)
+  #config.filter_run_when_matching(focus: true)
   config.example_status_persistence_file_path = '002_rspec_runner/examples.txt'
 end
 
@@ -30,5 +30,13 @@ RSpec.describe 'A cup of coffee' do
     it 'costs $1.25' do
       expect(coffee.price).to eq(1.25)
     end
+  end
+  it 'is light in color' do
+    pending 'Color not implemented yet'
+    expect(coffee.color).to be(:light)
+  end
+  it 'is cooler tham 200 dagrees Fahrenheit' do
+    pending 'Temperature not implemented yet'
+    expect(coffee.temperature).to be < 200.0
   end
 end
