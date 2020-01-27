@@ -6,10 +6,14 @@ class Coffee
   def add(ingredient)
     ingredients << ingredient
   end
-  
+
   def price
-    1.00
+    1.00  + ingredients.size*0.25
   end
+end
+
+RSpec.configure do |config|
+  config.example_status_persistence_file_path = '002_rspec_runner/examples.txt'
 end
 
 RSpec.describe 'A cup of coffee' do
